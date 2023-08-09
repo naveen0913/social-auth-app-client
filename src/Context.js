@@ -14,7 +14,7 @@ export default function Context(props) {
 
     useEffect(() => {
 
-        axios.get("https://fair-tan-walrus-tutu.cyclic.app/user",{withCredentials:true}).then(res=>{
+        axios.get("http://fair-tan-walrus-tutu.cyclic.app/user",{withCredentials:true}).then(res=>{
             if(res.data){
                 setUserobject(res.data)
                 console.log(res);
