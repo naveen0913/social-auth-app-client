@@ -14,7 +14,7 @@ export default function Context(props) {
 
     useEffect(() => {
 
-        axios.get("http://localhost:5000/user",{withCredentials:true}).then(res=>{
+        axios.get("https://social-system.onrender.com/user",{withCredentials:true}).then(res=>{
             if(res.data){
                 setUserobject(res.data)
                 console.log(res);
