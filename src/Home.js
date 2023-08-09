@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import TextField from '@mui/material/TextField';
 
-const Home = () => {
+const Home = ({userObject,setUserObject}) => {
 
-  const userObject=useContext(myContext)
-  console.log(userObject);
+ // const userObject=useContext(myContext)
+ // console.log(userObject);
  
   const [provider,setProvider]=useState(false)
 
@@ -125,9 +125,9 @@ const Home = () => {
                  <div>
                  <form onSubmit={''}>
                   <img src= 
-                  { userObject && (
-                    userObject?.photos[0].value 
-                   )} 
+                  { userObject.photos? 
+                     userObject.photos[0].value : ' '
+                   } 
                      alt="logined-User" className="rounded-circle mt-2 mb-2" 
                      width="150"
                     /> 
@@ -142,14 +142,13 @@ const Home = () => {
                     <div className="mt-3">
                       <h5 style={{color:'brown'}} >Username : 
                       <span onChange={noChange} style={{color:'blue',fontFamily:'serif',fontStyle:'normal',fontSize:'25px'}} > 
-                        {!provider && userObject && ( userObject?.username )}
+                        { userObject.username ?  userObject.username : '' }
                       </span>
                       </h5>
                     <h5 style={{color:'brown'}} >Signed in by : 
                       <span onChange={noChange} style={{color:'red',fontFamily:'serif',fontStyle:'normal',fontSize:'25px'}} >
-                            {userObject && (
-                              userObject?.provider
-                            )}
+                            {userObject.provider ? userObject.provider : ' '
+                            }
                       </span> 
                     </h5>
                     </div>
