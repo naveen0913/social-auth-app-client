@@ -9,8 +9,8 @@ import TextField from '@mui/material/TextField';
 
 const Home = ({userObject,setUserObject}) => {
 
- // const userObject=useContext(myContext)
- // console.log(userObject);
+  const userObject=useContext(myContext)
+  console.log(userObject);
  
   const [provider,setProvider]=useState(false)
 
