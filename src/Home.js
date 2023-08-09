@@ -126,7 +126,7 @@ const Home = () => {
                  <form onSubmit={''}>
                   <img src= 
                   { userObject.photos? 
-                     userObject.photos[0].value : ' '
+                     userObject?.photos[0].value : ' '
                    } 
                      alt="logined-User" className="rounded-circle mt-2 mb-2" 
                      width="150"
@@ -142,12 +142,12 @@ const Home = () => {
                     <div className="mt-3">
                       <h5 style={{color:'brown'}} >Username : 
                       <span onChange={noChange} style={{color:'blue',fontFamily:'serif',fontStyle:'normal',fontSize:'25px'}} > 
-                        { userObject.username ?  userObject.username : '' }
+                        { userObject.username ?  userObject?.username : '' }
                       </span>
                       </h5>
                     <h5 style={{color:'brown'}} >Signed in by : 
                       <span onChange={noChange} style={{color:'red',fontFamily:'serif',fontStyle:'normal',fontSize:'25px'}} >
-                            {userObject.provider ? userObject.provider : ' '
+                            {userObject.provider ? userObject?.provider : ' '
                             }
                       </span> 
                     </h5>
