@@ -38,7 +38,7 @@ const App = () => {
 
     event.preventDefault();
     //setErrors(Validation(values))
-    axios.post('https://social-system.onrender.com/login',values)
+    axios.post('http://fair-tan-walrus-tutu.cyclic.app/login',values)
     .then(res=>{
       if(res.data==="success"){
         navigate('/home')
@@ -57,7 +57,7 @@ const App = () => {
   //This function is for First time user signing up with his details
   const handleSubmit=(event)=>{
     event.preventDefault();
-    axios.post('https://fair-tan-walrus-tutu.cyclic.app/signup',values)
+    axios.post('http://fair-tan-walrus-tutu.cyclic.app/signup',values)
     .then(res=>{
       if(res.status===200){
         alert("signup Succesfull..! login Now ")
@@ -80,14 +80,14 @@ const App = () => {
     if(token){
       localStorage.setItem('authtoken',token);
       setAuthToken(token)
-      window.open("https://fair-tan-walrus-tutu.cyclic.app/auth/twitter","_self")
+      window.open("https//fair-tan-walrus-tutu.cyclic.app/auth/twitter","_self")
 
     }else{
       console.error("token not found");
     }
 
     localStorage.setItem("userid",userObject?.id)
-    window.open("https://fair-tan-walrus-tutu.cyclic.app/auth/twitter","_self")    
+    window.open("http://fair-tan-walrus-tutu.cyclic.app/auth/twitter","_self")    
   }
 
   const instagramLogin=()=>{
@@ -104,13 +104,13 @@ const App = () => {
     if(token){
       localStorage.setItem('authtoken',token);
       setAuthToken(token)
-      window.open("https://fair-tan-walrus-tutu.cyclic.app/auth/linkedin","_self")
+      window.open("http://fair-tan-walrus-tutu.cyclic.app/auth/linkedin","_self")
     }else{
       console.error("token not found");
     }
 
     localStorage.setItem("userid",userObject?.id)
-    window.open("https://fair-tan-walrus-tutu.cyclic.app/auth/linkedin","_self")
+    window.open("http://fair-tan-walrus-tutu.cyclic.app/auth/linkedin","_self")
     
   }
 
