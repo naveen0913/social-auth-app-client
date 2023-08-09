@@ -124,13 +124,14 @@ const Home = () => {
                  <div class="d-flex flex-column align-items-center text-center">
                  <div>
                  <form onSubmit={''}>
-                 
-                  { userObject && (  
-                     <img src= {userObject?.photos[0].value}  alt="logined-User"
+                  <img src=  { userObject && (  
+                       userObject?.photos[0].value
+                        )}  
+                     alt="logined-User"
                     className="rounded-circle mt-2 mb-2"
                      width="150"
                     /> 
-                  )}
+                 
                     <input type="file" 
                      onChange={handlefilechange}
                      id="profilePicture" name="profilePicture" 
