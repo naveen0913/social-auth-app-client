@@ -57,7 +57,7 @@ const Home = () => {
     formData.append('photo', photo);
 
     //post request from the axios
-    axios.post('https://social-system.onrender.com/add',formData)
+    axios.post('https://fair-tan-walrus-tutu.cyclic.app/add',formData)
     .then((res)=>{
       setMessage('photo uploaded Successfully')
       alert("data updated successfully")
@@ -124,7 +124,10 @@ const Home = () => {
                  <div class="d-flex flex-column align-items-center text-center">
                  <div>
                  <form onSubmit={''}>
-                  <img src= {userObject?.photos[0].value } 
+                  <img src= 
+                  { userObject && (
+                    userObject?.photos[0].value 
+                   )} 
                      alt="logined-User" className="rounded-circle mt-2 mb-2" 
                      width="150"
                     /> 
@@ -139,12 +142,14 @@ const Home = () => {
                     <div className="mt-3">
                       <h5 style={{color:'brown'}} >Username : 
                       <span onChange={noChange} style={{color:'blue',fontFamily:'serif',fontStyle:'normal',fontSize:'25px'}} > 
-                        {!provider && userObject?._json.screen_name ?  userObject?._json.screen_name : userObject?.displayName}
+                        {!provider && userObject && ( userObject?.username )}
                       </span>
                       </h5>
                     <h5 style={{color:'brown'}} >Signed in by : 
                       <span onChange={noChange} style={{color:'red',fontFamily:'serif',fontStyle:'normal',fontSize:'25px'}} >
-                            {userObject?.provider}
+                            {userObject && (
+                              userObject?.provider
+                            )}
                       </span> 
                     </h5>
                     </div>
