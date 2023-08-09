@@ -57,7 +57,7 @@ const Home = () => {
     formData.append('photo', photo);
 
     //post request from the axios
-    axios.post('https://fair-tan-walrus-tutu.cyclic.app/add',formData)
+    axios.post('http://fair-tan-walrus-tutu.cyclic.app/add',formData)
     .then((res)=>{
       setMessage('photo uploaded Successfully')
       alert("data updated successfully")
@@ -92,7 +92,7 @@ const Home = () => {
       const Imagedata=new ImageData();
       Imagedata.append('profilePicture',profilePicture)
 
-      const response=await axios.post('https://social-system.onrender.com/update-profile-picture', Imagedata);
+      const response=await axios.post('http://fair-tan-walrus-tutu.cyclic.app/update-profile-picture', Imagedata);
 
       if(response.status===200){
         console.log('Profile picture updated successfully.');
