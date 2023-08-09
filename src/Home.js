@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import TextField from '@mui/material/TextField';
 
-const Home = ({userObject,setUserObject}) => {
+const Home = () => {
 
   const userObject=useContext(myContext)
   console.log(userObject);
